@@ -11,7 +11,7 @@ let cy = 0
 function setup() {
 
 
-    let canvas = createCanvas(620, 440)
+    let canvas = createCanvas(1280, 720)
         // pixelsGrid = initGrid(10, 10)
 
     video = createCapture(VIDEO)
@@ -26,7 +26,7 @@ function draw() {
 
     background(0)
 
-    let spacing = 8
+    let spacing = 5
     noStroke()
 
     if (video) {
@@ -44,12 +44,12 @@ function draw() {
                 let dx = x - mouseX
                 let dy = y - mouseY
 
-                let offX = dx / 8
-                let offY = dy / 8
+                let offX = dx / 5
+                let offY = dy / 5
 
                 let d = dist(mouseX, mouseY, x, y)
 
-                let radius = width/4
+                let radius = width/8
 
                 if (d < radius) {
 
