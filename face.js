@@ -4,29 +4,59 @@ let pixelsGrid = []
 
 let cx = 0 
 let cy = 0 
+
+let poseNet;
+let pose;
 // distance attractor filed 
 // use nose eyes mouth as attractor points
 
+function preload(){
+    bg = loadImage("https://i.ytimg.com/vi/bAJ6eyjI_ZY/maxresdefault.jpg")
+//    doll = loadImage("https://i.pinimg.com/originals/1c/be/fa/1cbefadabbdd69ab07c7c87b74222821.png")
+}
 
 function setup() {
 
 
-    let canvas = createCanvas(1280, 720)
+    let canvas = createCanvas(640, 480)
         // pixelsGrid = initGrid(10, 10)
 
     video = createCapture(VIDEO)
     video.hide()
-    console.log('pixels grid loaded')
+    // console.log('pixels grid loaded')
+    poseNet = ml5.poseNet(video, modelLoaded);
+    poseNet.on('pose', gotPoses);
 
 }
+
+// function mousePressed() {
+//     fill (200,0,0)
+//     circle(mouseX, mouseY, 0, 0)
+// }
+
+function gotPoses(poses) {
+    if (poses.length > 0) {
+        pose = poses[0].pose;
+    }
+}
+  
+  function modelLoaded() {
+    console.log('poseNet ready');
+}
+
 
 function draw() {
 
     // console.log('draw!')
+    translate(video.width, 0);
+    scale(-1, 1);
+    image(video, 0, 0);
+  
+    background(bg)
+    tint(0, 153, 204);
 
-    background(0)
 
-    let spacing = 5
+    let spacing = 3
     noStroke()
 
     if (video) {
@@ -49,7 +79,7 @@ function draw() {
 
                 let d = dist(mouseX, mouseY, x, y)
 
-                let radius = width/8
+                let radius = width/5
 
                 if (d < radius) {
 
@@ -58,7 +88,6 @@ function draw() {
                     let circleRadius = (1-d/radius)*50
 
                     // stroke(255)
-
                     fill(brightness(col)*2,alpha)
                     circle(x + offX+cx, y + offY + sin(frameCount/100)*height/4, circleRadius)
 
@@ -76,12 +105,52 @@ function draw() {
 
     }
 
-    cx++
-    cy++ 
+    // cx++
+    // cy++ 
 
-    if (cx > width) cx = 0 
-    if (cy > height) cy = 0
+    // if (cx > width) cx = 0 
+    // if (cy > height) cy = 0
 
 
+if (pose) {
 
+    
 }
+}
+
+function eyes() {
+    // background(VIDEO);
+  
+    translate(video.width, 0);
+    scale(-1, 1);
+    image(video, 0, 0);
+    
+     if (pose) {
+          let eyeR = pose.rightEye;
+          let eyeL = pose.leftEye;
+          let d = dist(eyeR.x, eyeR.y, eyeL.x, eyeL.y);
+  
+          //Outer Eye
+          fill(0);
+          ellipse(eyeR.x,eyeR.y,d/2, (d/2));
+          ellipse(eyeL.x,eyeR.y,d/2, d/2);
+  
+          // Inner Eye
+          fill(255);
+          ellipse(eyeR.x + 8,eyeR.y + 8, d/15, d/15);
+          ellipse(eyeR.x - 8,eyeR.y - 8, d/15, d/15);
+          ellipse(eyeR.x - 8,eyeR.y + 8, d/15, d/15);
+          ellipse(eyeR.x + 8,eyeR.y - 8, d/15, d/15);
+  
+          ellipse(eyeL.x + 8,eyeR.y + 8, d/15, d/15);
+          ellipse(eyeL.x - 8,eyeR.y - 8, d/15, d/15);
+          ellipse(eyeL.x - 8,eyeR.y + 8, d/15, d/15);
+          ellipse(eyeL.x + 8,eyeR.y - 8, d/15, d/15);
+  
+    
+      }
+  
+  }
+    
+   
+  
