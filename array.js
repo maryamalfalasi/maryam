@@ -25,7 +25,7 @@ function setup() {
 function draw() {
 
     textAlign(CENTER,CENTER)
-    textSize(20)
+    textSize(30)
 
 
     for (var i = 0; i < sentences.length; i++) {

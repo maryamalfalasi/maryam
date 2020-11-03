@@ -25,7 +25,7 @@ function modelLoaded() {
 
 function draw() {
     image(video, 0, 0);
-    tint(0, 153, 204);
+    // tint(0, 153, 204);
     if (pose) {
         let eyeR = pose.rightEye;
         let eyeL = pose.leftEye;
@@ -48,27 +48,23 @@ function draw() {
         ellipse(eyeL.x - 8,eyeR.y + 8, d/15, d/15);
         ellipse(eyeL.x + 8,eyeR.y - 8, d/15, d/15);
 
-        // Nose
-        fill(0);
-        triangle(pose.nose.x - (d/3), pose.nose.y - (d/10), pose.nose.x + (d/3), pose.nose.y -(d/10), pose.nose.x, pose.nose.y + (d/3));
+        // // Nose
+        // fill(0);
+        // triangle(pose.nose.x - (d/3), pose.nose.y - (d/10), pose.nose.x + (d/3), pose.nose.y -(d/10), pose.nose.x, pose.nose.y + (d/3));
 
-          //Outer Ear
-        triangle(pose.nose.x + d, pose.nose.y - (d*1.2), pose.nose.x + (d/1.2), pose.nose.y -(d*2), pose.nose.x + (d/5), pose.nose.y - (d*1.5));
-        triangle(pose.nose.x - d, pose.nose.y - (d*1.2), pose.nose.x - (d/1.2), pose.nose.y -(d*2), pose.nose.x - (d/5), pose.nose.y - (d*1.5));
+        //   //Outer Ear
+        // triangle(pose.nose.x + d, pose.nose.y - (d*1.2), pose.nose.x + (d/1.2), pose.nose.y -(d*2), pose.nose.x + (d/5), pose.nose.y - (d*1.5));
+        // triangle(pose.nose.x - d, pose.nose.y - (d*1.2), pose.nose.x - (d/1.2), pose.nose.y -(d*2), pose.nose.x - (d/5), pose.nose.y - (d*1.5));
 
-        // Inner Ear
-        fill('#FA8072');
-        triangle(pose.nose.x + (d*.9), pose.nose.y - (d*1.3), pose.nose.x + (d/1.3), pose.nose.y - (d*1.8), pose.nose.x + (d/3.33), pose.nose.y - (d*1.5));
-        triangle(pose.nose.x - (d*.9), pose.nose.y - (d*1.3), pose.nose.x - (d/1.3), pose.nose.y - (d*1.8), pose.nose.x - (d/3.33), pose.nose.y - (d*1.5));
+        // // Inner Ear
+        // fill('#FA8072');
+        // triangle(pose.nose.x + (d*.9), pose.nose.y - (d*1.3), pose.nose.x + (d/1.3), pose.nose.y - (d*1.8), pose.nose.x + (d/3.33), pose.nose.y - (d*1.5));
+        // triangle(pose.nose.x - (d*.9), pose.nose.y - (d*1.3), pose.nose.x - (d/1.3), pose.nose.y - (d*1.8), pose.nose.x - (d/3.33), pose.nose.y - (d*1.5));
 
         // Whiskers
-        // line(pose.nose.x + (d/2.5), pose.nose.y - (d/20), pose.nose.x + (d), pose.nose.y - (d/4));
-        // line(pose.nose.x + (d/2.5), pose.nose.y + (d/20), pose.nose.x + d, pose.nose.y + (d/4));
-        // line(pose.nose.x + (d/2.5), pose.nose.y, pose.nose.x + d, pose.nose.y);
+        line(pose.mouth.x + (d/5), pose.mouth.y - (d/50), pose.mouth.x + (d), pose.mouth.y - (d/6));
 
-        // line(pose.nose.x - (d/2.5), pose.nose.y - (d/20), pose.nose.x - d, pose.nose.y - (d/4));
-        // line(pose.nose.x - (d/2.5), pose.nose.y + (d/20), pose.nose.x - d, pose.nose.y + (d/4));
-        // line(pose.nose.x - (d/2.5), pose.nose.y, pose.nose.x - d, pose.nose.y);
+        line(pose.mouth.x - (d/2.5), pose.mouth.y, pose.mouth.x - d, pose.mouth.y);
 
     }
 }

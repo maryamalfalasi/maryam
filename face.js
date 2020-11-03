@@ -1,4 +1,4 @@
-let capture
+let video
 
 let pixelsGrid = []
 
@@ -7,18 +7,15 @@ let cy = 0
 // distance attractor filed 
 // use nose eyes mouth as attractor points
 
-function preload() {
-
-    capture = createCapture()
-    capture.hide()
-}
 
 function setup() {
 
 
-    let canvas = createCanvas(1280, 720)
+    let canvas = createCanvas(620, 440)
         // pixelsGrid = initGrid(10, 10)
 
+    video = createCapture(VIDEO)
+    video.hide()
     console.log('pixels grid loaded')
 
 }
@@ -27,32 +24,32 @@ function draw() {
 
     // console.log('draw!')
 
-    background(34,155,215)
+    background(0)
 
-    let spacing = 5
+    let spacing = 8
     noStroke()
 
-    if (capture) {
+    if (video) {
 
         // image(capture.get(),0,0)
 
-        console.log('capture available')
+        console.log('video available')
 
-        for (var x = 0; x < capture.width; x += spacing) {
+        for (var x = 0; x < video.width; x += spacing) {
 
-            for (var y = 0; y < capture.height; y += spacing) {
+            for (var y = 0; y < video.height; y += spacing) {
 
-                let col = capture.get(x, y)
+                let col = video.get(x, y)
 
                 let dx = x - mouseX
                 let dy = y - mouseY
 
-                let offX = dx / 5
-                let offY = dy / 5
+                let offX = dx / 8
+                let offY = dy / 8
 
                 let d = dist(mouseX, mouseY, x, y)
 
-                let radius = width/8
+                let radius = width/4
 
                 if (d < radius) {
 
