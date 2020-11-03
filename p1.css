@@ -10,7 +10,7 @@ p {
 
 	color: white !important; 
     font-family: 'Annie Use Your Telescope', cursive;
-    padding-right: 65%;
+    padding-right: 58%;
     padding-left: 2%;
     font-size: larger;
 
@@ -64,7 +64,7 @@ ul{
 .text-block {
     position: absolute;
     bottom: -330px;
-    left: 726px;
+    left: 800px;
     color: white;
     font-family: 'Annie Use Your Telescope', cursive;
     padding-left: 50px;
@@ -74,9 +74,15 @@ ul{
 .text-block1 {
     position: absolute;
     bottom: -330px;
-    left: 926px;
+    left: 1000px;
     color: white;
     font-family: 'Annie Use Your Telescope', cursive;
     padding-left: 50px;
     padding-right: 50px;
+}
+
+.filter {
+    position: absolute;
+    bottom: -200px;
+    right: 200px;
 }
