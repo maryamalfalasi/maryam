@@ -161,3 +161,9 @@ ul{
 	  top: 135px;
   }
 
+  .vidplace {
+      position: relative;
+      right: 50%;
+  }
+
+
