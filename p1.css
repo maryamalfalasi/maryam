@@ -92,6 +92,17 @@ ul{
     padding-right: 50px;
 }
 
+.txt4 {
+    position: absolute;
+    bottom: -1500px;
+    left: 855px;
+    color: rgb(155, 99, 15);
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: larger;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 .filter {
     position: absolute;
     /* bottom: -200px; */
