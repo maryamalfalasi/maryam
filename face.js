@@ -2,17 +2,17 @@ let video
 
 let pixelsGrid = []
 
-let cx = 0 
-let cy = 0 
+let cx = 0
+let cy = 0
 
 let poseNet;
 let pose;
 // distance attractor filed 
 // use nose eyes mouth as attractor points
 
-function preload(){
+function preload() {
     bg = loadImage("https://i.ytimg.com/vi/bAJ6eyjI_ZY/maxresdefault.jpg")
-//    doll = loadImage("https://i.pinimg.com/originals/1c/be/fa/1cbefadabbdd69ab07c7c87b74222821.png")
+        //    doll = loadImage("https://i.pinimg.com/originals/1c/be/fa/1cbefadabbdd69ab07c7c87b74222821.png")
 }
 
 function setup() {
@@ -23,7 +23,7 @@ function setup() {
 
     video = createCapture(VIDEO)
     video.hide()
-    // console.log('pixels grid loaded')
+        // console.log('pixels grid loaded')
     poseNet = ml5.poseNet(video, modelLoaded);
     poseNet.on('pose', gotPoses);
 
@@ -39,8 +39,8 @@ function gotPoses(poses) {
         pose = poses[0].pose;
     }
 }
-  
-  function modelLoaded() {
+
+function modelLoaded() {
     console.log('poseNet ready');
 }
 
@@ -48,18 +48,21 @@ function gotPoses(poses) {
 function draw() {
 
     // console.log('draw!')
-    translate(video.width, 0);
-    scale(-1, 1);
-    image(video, 0, 0);
-  
-    background(bg)
-    tint(0, 153, 204);
+    // translate(video.width, 0);
+    // scale(-1, 1);
+    // image(video, 0, 0);
+
+    if (video && pose) {
 
 
-    let spacing = 3
-    noStroke()
 
-    if (video) {
+
+        background(bg)
+        tint(0, 153, 204);
+
+
+        let spacing = 3
+        noStroke()
 
         // image(capture.get(),0,0)
 
@@ -74,22 +77,25 @@ function draw() {
                 let dx = x - mouseX
                 let dy = y - mouseY
 
-                let offX = dx / 5
-                let offY = dy / 5
+                // let offX = dx / 5
+                // let offY = dy / 5
+                let offX = 0
+                let offY = 0
 
-                let d = dist(mouseX, mouseY, x, y)
+                let d = dist(pose.rightEye.x, pose.rightEye.y, x, y)
 
-                let radius = width/5
+                let radius = width / 5
 
                 if (d < radius) {
 
-                    let alpha = (1-d/radius)*255
+                    let alpha = (1 - d / radius) * 255
 
-                    let circleRadius = (1-d/radius)*50
+                    let circleRadius = (1 - d / radius) * 50
 
                     // stroke(255)
-                    fill(brightness(col)*2,alpha)
-                    circle(x + offX+cx, y + offY + sin(frameCount/100)*height/4, circleRadius)
+                    fill(brightness(col) * 2, alpha)
+
+                    circle(x,y,spacing*2,spacing*2)
 
 
 
@@ -103,54 +109,43 @@ function draw() {
 
         }
 
+
+        eyes()
+
     }
 
-    // cx++
-    // cy++ 
-
-    // if (cx > width) cx = 0 
-    // if (cy > height) cy = 0
-
-
-if (pose) {
-
-    
-}
 }
 
 function eyes() {
     // background(VIDEO);
-  
-    translate(video.width, 0);
-    scale(-1, 1);
-    image(video, 0, 0);
-    
-     if (pose) {
-          let eyeR = pose.rightEye;
-          let eyeL = pose.leftEye;
-          let d = dist(eyeR.x, eyeR.y, eyeL.x, eyeL.y);
-  
-          //Outer Eye
-          fill(0);
-          ellipse(eyeR.x,eyeR.y,d/2, (d/2));
-          ellipse(eyeL.x,eyeR.y,d/2, d/2);
-  
-          // Inner Eye
-          fill(255);
-          ellipse(eyeR.x + 8,eyeR.y + 8, d/15, d/15);
-          ellipse(eyeR.x - 8,eyeR.y - 8, d/15, d/15);
-          ellipse(eyeR.x - 8,eyeR.y + 8, d/15, d/15);
-          ellipse(eyeR.x + 8,eyeR.y - 8, d/15, d/15);
-  
-          ellipse(eyeL.x + 8,eyeR.y + 8, d/15, d/15);
-          ellipse(eyeL.x - 8,eyeR.y - 8, d/15, d/15);
-          ellipse(eyeL.x - 8,eyeR.y + 8, d/15, d/15);
-          ellipse(eyeL.x + 8,eyeR.y - 8, d/15, d/15);
-  
-    
-      }
-  
-  }
-    
-   
-  
+
+    // translate(video.width, 0);
+    // scale(-1, 1);
+    // image(video, 0, 0);
+
+    if (pose) {
+        let eyeR = pose.rightEye;
+        let eyeL = pose.leftEye;
+        let d = dist(eyeR.x, eyeR.y, eyeL.x, eyeL.y);
+
+        //Outer Eye
+        fill(0);
+        ellipse(eyeR.x, eyeR.y, d / 2, (d / 2));
+        ellipse(eyeL.x, eyeR.y, d / 2, d / 2);
+
+        // Inner Eye
+        fill(255);
+        ellipse(eyeR.x + 8, eyeR.y + 8, d / 15, d / 15);
+        ellipse(eyeR.x - 8, eyeR.y - 8, d / 15, d / 15);
+        ellipse(eyeR.x - 8, eyeR.y + 8, d / 15, d / 15);
+        ellipse(eyeR.x + 8, eyeR.y - 8, d / 15, d / 15);
+
+        ellipse(eyeL.x + 8, eyeR.y + 8, d / 15, d / 15);
+        ellipse(eyeL.x - 8, eyeR.y - 8, d / 15, d / 15);
+        ellipse(eyeL.x - 8, eyeR.y + 8, d / 15, d / 15);
+        ellipse(eyeL.x + 8, eyeR.y - 8, d / 15, d / 15);
+
+
+    }
+
+}
