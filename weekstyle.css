@@ -145,3 +145,26 @@ padding-top: -5%px;
   left: 5px;
 
 }
+
+.c2 {
+
+	position: absolute;
+  top: 940px;
+  left: 455px;
+  color: black;
+  font-family: 'VT323', monospace;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.text-block1 {
+	position: absolute;
+	top: 650px;
+	right: 230px;
+	font-size: x-large;
+	color: black;
+	font-family: 'VT323', monospace;
+	padding-left: 50px;
+	padding-right: 50px;
+	
+  }
