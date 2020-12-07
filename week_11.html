@@ -1,0 +1,25 @@
+ <html>
+  <head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.0.4/aframe.min.js" integrity="sha512-C5o7nqPhPwvfu3ZXTzTXJMyDMdxu65TtMd+GNHUrxtxhK9TdYS56W4QCtIIL+dvE9jXRsH3HmIkM0sfcfPyjug==" crossorigin="anonymous">
+    	</script>
+
+    </head>
+<body>
+    <a-scene>
+        <a-assets>
+          <video id="coraline" autoplay loop="true" src="coravid.mp4"> </video>
+        </a-assets>
+      
+        <!-- Using the asset management system. -->
+        <a-videosphere src="#coraline"></a-videosphere>
+      
+        <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
+        <!-- <a-videosphere src="coravid.mp4"></a-videosphere> -->
+
+        <a-cursor></a-cursor>
+      </a-scene>
+
+</body>
+</html>
+ 
+ 
