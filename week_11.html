@@ -8,18 +8,18 @@
     <a-scene>
         <a-assets>
           <video id="coraline" autoplay loop="true" src="coravid.mp4"> </video>
+          <audio id="corasound" src="corasound.mp3"></audio> 
         </a-assets>
       
-        <!-- Using the asset management system. -->
         <a-videosphere src="#coraline"></a-videosphere>
-      
-        <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-        <!-- <a-videosphere src="coravid.mp4"></a-videosphere> -->
-
         <a-cursor></a-cursor>
+        <a-sound src="#corasound" autoplay="true" position="0 2 5" volume="3"><a-sound>
       </a-scene>
+
 <script src="vrcora.js"> </script>
+
 </body>
+
 </html>
  
  
