@@ -7,16 +7,26 @@
 <body>
     <a-scene>
         <a-assets>
-          <video id="coraline" autoplay loop="true" src="coravid.mp4"> </video>
+          <video id="coraline" autoplay loop="true" src="coravid.mp4" webkit-playsinline playsinline> </video>
           <audio id="corasound" src="corasound.mp3"></audio> 
         </a-assets>
-      
+        
         <a-videosphere src="#coraline"></a-videosphere>
+        <a-sound src="#corasound" autoplay="true"><a-sound>
+
         <a-cursor></a-cursor>
-        <a-sound src="#corasound" autoplay="true" position="0 2 5" volume="3"><a-sound>
-      </a-scene>
+        <a-entity camera look-controls="pointerLockEnabled: true;" wasd-controls position="0 20 0" animation="property: camera.zoom; from: 1; to: 2; dur: 10000; easing: easeInOutQuad; loop: true; dir: alternate;">
+        </a-entity>
+      
+        </a-scene>
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+
 
 <script src="vrcora.js"> </script>
+
+
 
 </body>
 
