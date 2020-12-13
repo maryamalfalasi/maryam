@@ -7,12 +7,10 @@
 <body>
     <a-scene>
         <a-assets>
-          <video id="coraline" autoplay loop="true" src="coravid.mp4" webkit-playsinline playsinline> </video>
-          <audio id="corasound" src="corasound.mp3"></audio> 
+          <video id="coraline" autoplay loop="true" src="coralinevrvid.mp4" webkit-playsinline playsinline> </video>
         </a-assets>
         
         <a-videosphere src="#coraline"></a-videosphere>
-        <a-sound src="#corasound" autoplay="true"><a-sound>
 
         <a-cursor></a-cursor>
         <a-entity camera look-controls="pointerLockEnabled: true;" wasd-controls position="0 20 0" animation="property: camera.zoom; from: 1; to: 2; dur: 10000; easing: easeInOutQuad; loop: true; dir: alternate;">
