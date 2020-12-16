@@ -1,0 +1,108 @@
+<!-- HTML Example -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title> Introduction </title>
+    
+    <link rel="stylesheet" type="text/css" href="p2.css" img="TB1.png" img="tb2.png"> 
+    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+
+    <audio controls autoplay loop>
+        <source src="Coraline.mp3" type="audio/mpeg">
+        <embed src= "Coraline.mp3" autostart="true" loop="true" hidden="true"> 
+      </audio>
+
+</head>
+
+
+
+<body>
+
+	<div id="content">
+
+        <h2> Coraline VR </h2>
+
+        <h1> <br>
+            
+            MuW201 Tangible Computing </h1>
+
+		
+	
+           <p> Through the looking glass is a VR experience inspired by the Coraline movie and Tim Burton aesthetic, throughout the VR environment, you will be taken and moved through key parts of the movie and experience them through an immersive experience using visuals and sound. The visuals in the Virtual Reality experience stems from 4 different scenes in the movie. The tunnel scene, the circus scene, the fight with the Other Mother, and the scene where she sees the house. Using Photoshop I was able to draw and develop each scene by creating a 4000x2000 document, then drawing in my scene (background) and making sure everything is properly aligned using Photoshops 3D Spherical Panorama tool. Using these 360, panorama backgrounds, I began coding my vr videoSphere. On the first iteration I used a-frame to code my background, using;
+            a-assets img src="coraline.png" id=“360photo"> /a-assets> 
+            a-sky src =“#360photo”> /a-sky>
+            Using these assets, and placing them in a scene, the ‘img src’ extracts the image and the id gives it a name, using the #, therefore I managed to insert the photo as a background using the a-sky src. After that, I decided to experiment with the zooms to make the experience more immersive and fun, and in order to do that I used the; 
+            a-entity camera look-controls position="0 1.6 0”> /a-entity> with this code, the camera was able to move and zoom in and out because of the three numbers in the position 0 1.6 0, the first and last zero represented the starting and ending point which is in the center, making the camera move 1.6x into the centre and back, and it would keep repeating this way. Finally I added <a-cursor></a-cursor>, so that the VR could be moved using a cursor on the desktop, the final outcome of my first code was; 
+            “body> a-scene> a-assets> img src="CORAAA.png" id=“360photo"> /a-assets> a-sky src =“#360photo>/a-sky> a-entity camera look-controls position="0 1.6 0”>/a-entity> a-cursor>/a-cursor> /a-scene>  /body>
+            Moving on, to further enhance my project, I moved it into p5js, where I used different sounds every time a scene changed and had them overlap onto each other to create further tension, using arrays, the scenes switched every time the z axis moved to a certain point using the z axis, and different ID’s. With project 1, I started with a classic face filter, turning you into Coraline and showing you a 2D version of her world, using button eyes and a background, however with this project I made it much more immersive environment bringing you into the world to experience it in 3D. “The illusion of participation in a synthetic environment rather than external observation of such an environment.” (Gigante 1993). By participating in this environment, it gives you the opportunity to experience the reality and trigger an emotional response from the user into this environment, allowing them to experience reality like they never have before.    </p>
+            
+            <!-- <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+<!-- <div style="position: relative; padding-bottom:56.25%; padding-top:30px; height:0; overflow:hidden;"> -->
+    
+    <!-- <div class="vidplace"> -->
+    <iframe width="560" height="315" style = "position: absolute; left: 800px; bottom: -1050px;  width: 360px; height: 215px;" src="https://youtu.be/v8JAup2aqOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- </div> -->
+
+        </p>
+		<br>
+
+        <h3>   </h3>
+
+        <h5 class="txt3">
+            Click the stickers to view extra work!
+        </h5>  
+        
+
+        <img style="position:absolute; left: 620px; top: 25px" src="TB1.png" width="55%"/>
+        <!-- <img style="position:absolute; left: 10px; bottom: -450px" src="tb2.png" width="60%"/> -->
+        <img style="position:absolute; left: 159px; bottom: -1100px" src="tb3.png" width="50%"/>  
+       <!-- <embed src="/Maryam Al Falasi/Coraline.mp3" loop="true" autostart="true" width="2" height="0"> -->
+        <!-- <img style="position:absolute; left: 60px; bottom: -1120px" src="s3.png" width="50%" />   -->
+   
+        
+    <a href="https://youtu.be/6aUbLqJLp8w"> <img style = "position:absolute; left: 580px; bottom: -150px" src="https://i.pinimg.com/originals/0a/e3/6f/0ae36fd81145c3185b23460b27df9e1b.png" width="200"> </a>
+    <a href="https://maryamalfalasi.github.io/maryam/week_10.html"> <img style = "position:absolute; left: 1200px; bottom: -200px" src="s1.png" width="200"> </a>
+    <a href="https://maryamalfalasi.github.io/maryam/week_08.html"> <img style = "position:absolute; left: 1100px; bottom: -650px" src="s2.png" width="200"> </a>
+    <a href="https://maryamalfalasi.github.io/maryam/week_07.html"> <img style = "position:absolute; left: 900px; bottom: -650px" src="s3.png" width="200"> </a>
+    
+    <!-- <div class="p5js"> -->
+    <iframe style = "position: absolute; left: 800px; bottom: -150px; " src="https://editor.p5js.org/maryamalfalasi/embed/Vh6KRa9Pb"></iframe>
+<!-- </div> -->
+
+    <a href="https://maryam-alfalasi.medium.com/through-the-looking-glass-muw201-d38542168bb4"> <img style = "position:absolute; left: 850px; bottom: -450px" src="blog.png" width="300"> </a>
+    
+    
+
+<!-- 
+    <a href="https://www.openprocessing.org/sketch/985501"> <img style = "position:absolute; left: 720px; bottom: -1580px" src="stky.png" width="150"> </a>
+    <a href="https://www.openprocessing.org/sketch/984303"> <img style = "position:absolute; left: 1220px; bottom: -1580px" src="stky2.png" width="150"> </a>
+    <a href="https://editor.p5js.org/maryamalfalasi/sketches/3ctjt9O6y"> <img style = "position:absolute; left: 1230px; bottom: -1800px" src="stky3.png" width="150"> </a>
+    <a href="https://editor.p5js.org/maryamalfalasi/sketches/rHqMHrg6m"> <img style = "position:absolute; left: 700px; bottom: -1800px" src="stky4.png" width="150"> </a>
+    <a href="https://editor.p5js.org/maryamalfalasi/sketches/W8zH4gznH"> <img style = "position:absolute; left: 1070px; bottom: -2100px" src="stky5.png" width="200"> </a> -->
+ -->
+
+		
+</div>
+
+    <div class="gohome">
+		<a href="index.html"> <img src="back.gif" width="80"> </a>
+    </div>
+    
+
+        <!-- <script src ="face.js"></script> -->
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
